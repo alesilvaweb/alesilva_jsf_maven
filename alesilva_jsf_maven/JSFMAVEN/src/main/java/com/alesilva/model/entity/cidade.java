@@ -13,14 +13,14 @@ import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
 @Entity
-@Table
+@Table(name = "cidade")
 public class cidade implements Serializable{
      private static final long SerialVersionUID = 1L;
      
      @Id
      @GeneratedValue
      @Column(name = "id_cidade",nullable = false)
-     private Long id;
+     private Long idCidade;
      @Column(name = "ds_cidade",unique = true)
      private String cidade;
      
@@ -39,12 +39,12 @@ public class cidade implements Serializable{
         this.enderecos = enderecos;
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdCidade() {
+        return idCidade;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdCidade(Long idCidade) {
+        this.idCidade = idCidade;
     }
 
     public String getCidade() {
@@ -58,7 +58,7 @@ public class cidade implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.id);
+        hash = 53 * hash + Objects.hashCode(this.idCidade);
         return hash;
     }
 
@@ -71,9 +71,9 @@ public class cidade implements Serializable{
             return false;
         }
         final cidade other = (cidade) obj;
-        return Objects.equals(this.id, other.id);
+        return Objects.equals(this.idCidade, other.idCidade);
     }
-     
+    
      
      
      

@@ -17,7 +17,7 @@
     <mapping class="com.alesilva.model.entity.Sexo"/>
     <mapping class="com.alesilva.model.entity.TipoEndereco"/>
     <mapping class="com.alesilva.model.entity.TipoLogradouro"/>
-    <mapping class="com.alesilva.model.entity.Cidade"/>
+    <mapping class="com.alesilva.model.entity.cidade"/>
 
   </session-factory>
 </hibernate-configuration>
