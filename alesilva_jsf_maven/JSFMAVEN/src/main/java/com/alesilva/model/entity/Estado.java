@@ -20,12 +20,12 @@ public class Estado implements Serializable{
      @Id
      @GeneratedValue
      @Column(name = "id_estado" ,nullable = false)
-     private Long id;
+     private Long idEstado;
      @Column(name = "ds_estado",unique = true)
      private String estado;
      
      @OneToMany
-     @ForeignKey(name = "EnderecoEstado")
+     @ForeignKey(name = "EnderecoEstado_fk")
      private List<Endereco> enderecos;
 
     public List<Endereco> getEnderecos() {
@@ -37,14 +37,15 @@ public class Estado implements Serializable{
     }
 
     public Estado() {
+        
     }
 
-    public Long getId() {
-        return id;
+    public Long getIdEstado() {
+        return idEstado;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdEstado(Long idEstado) {
+        this.idEstado = idEstado;
     }
 
     public String getEstado() {
@@ -57,8 +58,8 @@ public class Estado implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 59 * hash + Objects.hashCode(this.id);
+        int hash = 7;
+        hash = 41 * hash + Objects.hashCode(this.idEstado);
         return hash;
     }
 
@@ -71,9 +72,8 @@ public class Estado implements Serializable{
             return false;
         }
         final Estado other = (Estado) obj;
-        return Objects.equals(this.id, other.id);
+        return Objects.equals(this.idEstado, other.idEstado);
     }
-     
-     
-    
+
+   
 }
