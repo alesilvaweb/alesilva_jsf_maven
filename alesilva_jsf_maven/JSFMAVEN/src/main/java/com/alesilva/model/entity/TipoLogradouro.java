@@ -47,6 +47,22 @@ public class TipoLogradouro implements Serializable{
         this.tipologradouro = logradouro;
     }
 
+    public String getTipologradouro() {
+        return tipologradouro;
+    }
+
+    public void setTipologradouro(String tipologradouro) {
+        this.tipologradouro = tipologradouro;
+    }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;

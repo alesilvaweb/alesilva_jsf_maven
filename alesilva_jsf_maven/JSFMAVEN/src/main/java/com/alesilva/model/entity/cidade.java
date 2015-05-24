@@ -31,6 +31,14 @@ public class cidade implements Serializable{
     public cidade() {
     }
 
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
     public Long getId() {
         return id;
     }

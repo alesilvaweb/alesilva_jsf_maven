@@ -28,6 +28,14 @@ public class Estado implements Serializable{
      @ForeignKey(name = "EnderecoEstado")
      private List<Endereco> enderecos;
 
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
     public Estado() {
     }
 
