@@ -1,5 +1,7 @@
 package com.alesilva.model.entity;
 
+
+
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -37,17 +39,12 @@ public class Endereco implements Serializable{
     @ForeignKey(name = "EnderecoPessoa")
     @JoinColumn(name = "id_pessoa",referencedColumnName = "idPessoa")
     private Pessoa pessoa ;
-    
-    @ManyToOne(optional = false ,fetch = FetchType.LAZY)
-    @ForeignKey(name = "EnderecoEstado_fk")
-    @JoinColumn(name = "idEstado",referencedColumnName = "idEstado")
-    private Estado estado;
-    
 
    @ManyToOne(optional = false,fetch = FetchType.LAZY)
    @ForeignKey(name = "EnderecoTipoEndereco")
    @JoinColumn(name = "idTipoEndereco",referencedColumnName = "idTipoEndererco")
    private TipoEndereco   tipoendereco;
+   
    
    @ManyToOne(optional = false,fetch = FetchType.LAZY)
    @ForeignKey(name = "EnderecoTipoLogradouro")
@@ -57,11 +54,16 @@ public class Endereco implements Serializable{
    @ManyToOne(optional = false,fetch = FetchType.LAZY)
    @ForeignKey(name = "Enderecocidade")
    @JoinColumn(name = "idCidade",referencedColumnName = "idCidade")
-   private cidade  cidade;
+   private Cidade  cidade;
+   
+    @ManyToOne(optional = false,fetch = FetchType.LAZY)
+    @ForeignKey(name = "enderecoEstado")
+    @JoinColumn(name = "idEstado")
+    private Estado estado;
     
 
     public Endereco() {
-        this.cidade = new cidade();
+        this.cidade = new Cidade();
         this.estado = new Estado();
         this.tipologradouro = new TipoLogradouro();
         this.tipoendereco = new TipoEndereco();
@@ -84,7 +86,6 @@ public class Endereco implements Serializable{
         this.tipologradouro = tipologradouro;
     }
     
-
     public Pessoa getPessoa() {
         return pessoa;
     }
@@ -101,11 +102,11 @@ public class Endereco implements Serializable{
         this.tipoendereco = tipoendereco;
     }
 
-    public cidade getCidade() {
+    public Cidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(cidade cidade) {
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
     }
     

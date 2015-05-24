@@ -4,17 +4,20 @@
   <session-factory>
     <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/mavenjsf_db?createDatabaseIfNotExist=true</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3307/jsf_db?createDatabaseIfNotExist=true</property>
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password">usbw</property>
     <property name="hibernate.show_sql"/>
     <property name="hibernate.format_sql"/>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping class="com.alesilva.model.entity.cidade"/>
+ 
+    <mapping class="com.alesilva.model.entity.Estado"/>
     <mapping class="com.alesilva.model.entity.Endereco"/>
     <mapping class="com.alesilva.model.entity.Pessoa"/>
     <mapping class="com.alesilva.model.entity.Sexo"/>
     <mapping class="com.alesilva.model.entity.TipoEndereco"/>
     <mapping class="com.alesilva.model.entity.TipoLogradouro"/>
+    <mapping class="com.alesilva.model.entity.Cidade"/>
+
   </session-factory>
 </hibernate-configuration>
