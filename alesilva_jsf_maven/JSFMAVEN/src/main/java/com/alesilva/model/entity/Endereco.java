@@ -37,23 +37,23 @@ public class Endereco implements Serializable{
     
     @OneToOne(optional = true , fetch = FetchType.LAZY)
     @ForeignKey(name = "EnderecoPessoa")
-    @JoinColumn(name = "id_pessoa",referencedColumnName = "idPessoa")
+    @JoinColumn(name = "id_pessoa")
     private Pessoa pessoa ;
 
    @ManyToOne(optional = false,fetch = FetchType.LAZY)
    @ForeignKey(name = "EnderecoTipoEndereco")
-   @JoinColumn(name = "idTipoEndereco",referencedColumnName = "idTipoEndererco")
+   @JoinColumn(name = "idTipoEndereco")
    private TipoEndereco   tipoendereco;
    
    
    @ManyToOne(optional = false,fetch = FetchType.LAZY)
    @ForeignKey(name = "EnderecoTipoLogradouro")
-   @JoinColumn(name = "idTipoLogradouro",referencedColumnName = "idTipoLogradouro")
+   @JoinColumn(name = "idTipoLogradouro")
    private TipoLogradouro tipologradouro;
    
    @ManyToOne(optional = false,fetch = FetchType.LAZY)
    @ForeignKey(name = "Enderecocidade")
-   @JoinColumn(name = "idCidade",referencedColumnName = "idCidade")
+   @JoinColumn(name = "idCidade")
    private cidade  cidade;
    
     @ManyToOne(optional = false,fetch = FetchType.LAZY)

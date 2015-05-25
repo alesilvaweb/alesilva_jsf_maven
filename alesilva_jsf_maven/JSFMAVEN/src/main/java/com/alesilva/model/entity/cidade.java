@@ -9,17 +9,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
 import org.hibernate.annotations.ForeignKey;
 
+
 @Entity
-@Table(name = "cidade")
 public class cidade implements Serializable{
      private static final long SerialVersionUID = 1L;
      
      @Id
      @GeneratedValue
-     @Column(name = "id_cidade",nullable = false)
+     @Column(nullable = false)
      private Long idCidade;
      @Column(name = "ds_cidade",unique = true)
      private String cidade;
@@ -58,7 +57,7 @@ public class cidade implements Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.idCidade);
+        hash = 71 * hash + Objects.hashCode(this.idCidade);
         return hash;
     }
 
@@ -71,10 +70,10 @@ public class cidade implements Serializable{
             return false;
         }
         final cidade other = (cidade) obj;
-        return Objects.equals(this.idCidade, other.idCidade);
+        if (!Objects.equals(this.idCidade, other.idCidade)) {
+            return false;
+        }
+        return true;
     }
-    
-     
-     
-     
+   
 }

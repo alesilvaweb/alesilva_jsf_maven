@@ -53,7 +53,7 @@ public class Pessoa implements Serializable {
    
    @ManyToOne(optional = false)
    @ForeignKey(name = "PessoaSexo")
-   @JoinColumn(name = "idSexo",referencedColumnName = "idSexo")
+   @JoinColumn(name = "idSexo")
    private Sexo sexo;
 
    
